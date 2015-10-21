@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>SMCountDown</title>
+
+<!--
+	SMCountDown 倒计时插件
+-->
+<script language="javascript" src="js/jquery.js"></script>
+<script language="javascript" src="js/jquery-SMCountDown.js"></script>
+<script language="javascript">
+	$(function(){
+		//实例化倒计时
+		var SMCountDown = $('#btnOk').initSMCountDown({delay:10});
+		
+		//实例化倒计时2
+		var SMCountDown2 = $('#btnOk2').initSMCountDown({delay:20,delayTxt:'发送',disabled:true});//自定义计时文本
+		
+		
+		
+		//点击启动倒计时
+		$('#btnOk3').click(function(){
+			SMCountDown.statrSMCountDown();						
+		});
+		//点击停止计时
+		$('#btnOk4').click(function(){
+			SMCountDown.clearSMCountDown();						
+		});
+		
+		//启动第二个计时
+		SMCountDown2.statrSMCountDown();
+	});
+</script>
+</head>
+
+<body>
+
+<input type="button" id="btnOk" value="开始倒计时"/>
+
+<input type="button" id="btnOk2" value="开始倒计时测试"/>
+
+<br/><br/>
+<button id="btnOk3">启动计时</button> &nbsp;
+<button id="btnOk4">停止计时</button>
+
+</body>
+</html>
